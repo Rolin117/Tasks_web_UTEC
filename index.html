@@ -3,13 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TaskManager</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <header>
-        <nav>
-            
-        </nav>
+    <header class="header-sitio">
+        <div class="contenedor contenedor-header">
+            <a href="index.html" class="logo">TaskManager</a>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <div class="contenedor contenedor-hero">
+                <div class="hero-texto">
+                    <h1>Organiza tus tareas academicas sin perder el hilo</h1>
+                    <p>
+                        TaskFlow reúne tus entregas, exámenes y lecturas pendientes en un 
+                        solo lugar, para que dejes de depender de notas sueltas y recordatorios.
+                    </p>
+                    <a href="servicios.html" class="btn-primario">Ver funciones</a>
+                </div>
+                <div class="hero-img">
+                    <img src="" alt="Vista previa panel de tareas">
+                </div>
+            </div>
+        </section>
+
+        <section class="funciones">
+            <div class="contenedor">
+                <h2>Qué puedes hacer con TaskManager</h2>
+                <ul class="lista-funciones">
+                    <li>
+                        <h3>Organizar por materia</h3>
+                        <p>Agrupa tus tareas según el curso al que pertenecen, para ubicarlas de un vistazo.</p>
+                    </li>
+                    <li>
+                        <h3>Seguir fechas límite</h3>
+                        <p>Cada tarea muestra su fecha de entrega, para priorizar sin adivinar qué va primero.</p>
+                    </li>
+                    <li>
+                        <h3>Marcar avances</h3>
+                        <p>Cambia el estado de una tarea a completada y lleva un registro claro de tu progreso.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="dashboard-preview">
+            <div class="contenedor">
+                <h2>Tareas de hoy</h2>
+                    <p class="current-time">
+                    Hoy es <span id="fecha-actual">jueves, 14 de septiembre</span> — <span id="hora-actual">09:42 am</span>
+                    </p>
+                    <ul class="task-list" id="lista-tareas">
+                    <li class="task-item">
+                        <input type="checkbox" id="tarea-1">
+                        <label for="tarea-1">Entregar ensayo de Filosofia</label>
+                        <span class="tag">Filosofia</span>
+                    </li>
+                    <li class="task-item completed">
+                        <input type="checkbox" id="tarea-2" checked>
+                        <label for="tarea-2">Estudiar para parcial de Matematicas</label>
+                        <span class="tag">Matematicas II</span>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" id="tarea-3">
+                        <label for="tarea-3">Preparar presentación de Etica</label>
+                        <span class="tag">Etica</span>
+                    </li>
+                    </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-sitio">
+        <div class="contenedor contenedor-footer">
+            <p>2026 TaskManager. Academico</p>
+            <ul class="links-footer">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="nosotros.html"></a>Nosotros</li>
+                <li><a href="contacto.html"></a>Contacti</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
