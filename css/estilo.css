@@ -1,0 +1,134 @@
+:root {
+  --color-primario: #3b82f6;
+  --color-primario-hover: #1d4ed8;
+  --color-fondo: #f8fafc;
+  --color-tarjeta: #ffffff;
+  --color-texto: #0f172a;
+  --color-texto-secundario: #475569;
+  --borde-color: #e2e8f0;
+  --fuente: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header-sitio {
+  background-color: var(--color-tarjeta);
+  border-bottom: 1px solid var(--borde-color);
+  padding: 1rem 0;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.navegacion ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: var(--color-texto-secundario);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a.active {
+  color: var(--color-primario);
+}
+
+.hero {
+  padding: 4rem 0 3rem 0;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.btn-primario {
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.funciones {
+  padding: 2rem 0 4rem 0;
+}
+
+.funciones h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.lista-funciones {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.lista-funciones li {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.lista-funciones h3 {
+  font-size: 1.15rem;
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.lista-funciones p {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+}
