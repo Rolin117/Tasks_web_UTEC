@@ -3,44 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Servicios</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header { background: #004080; color: white; padding: 15px; text-align: center; }
+        h1 { margin: 0; }
+        .contenedor { max-width: 700px; margin: auto; }
+        h2 { color: #004080; margin-top: 30px; }
+        .task-list { list-style: none; padding: 0; }
+        .task-item { display: flex; flex-direction: column; margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+        .task-item label { font-weight: bold; }
+        .tag { background: #eee; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin-top: 5px; display: inline-block; }
+        .fecha { font-size: 12px; color: #555; margin-top: 5px; }
+        .add-task { margin-top: 20px; }
+        .add-task input { margin-right: 5px; }
+    </style>
 </head>
 <body>
+    <!-- Encabezado de Servicios -->
     <header>
-
+        <h1>Servicios</h1>
     </header>
 
     <main>
-                <section class="dashboard-preview">
-            <div class="contenedor">
-                <h2>Tareas de hoy</h2>
-                    <p class="current-time">
-                    Hoy es <span id="fecha-actual">jueves, 14 de septiembre</span> — <span id="hora-actual">09:42 am</span>
-                    </p>
-                    <ul class="task-list" id="lista-tareas">
-                    <li class="task-item">
-                        <input type="checkbox" id="tarea-1">
-                        <label for="tarea-1">Entregar ensayo de Filosofia</label>
-                        <span class="tag">Filosofia</span>
-                    </li>
-                    <li class="task-item completed">
-                        <input type="checkbox" id="tarea-2" checked>
-                        <label for="tarea-2">Estudiar para parcial de Matematicas</label>
-                        <span class="tag">Matematicas II</span>
-                    </li>
-                    <li class="task-item">
-                        <input type="checkbox" id="tarea-3">
-                        <label for="tarea-3">Preparar presentación de Etica</label>
-                        <span class="tag">Etica</span>
-                    </li>
-                    </ul>
+        <div class="contenedor">
+            <h2>Agenda - Actividades</h2>
+            <ul class="task-list" id="lista-actividades">
+                <li class="task-item">
+                    <input type="checkbox" id="actividad-1">
+                    <label for="actividad-1">Entregar ensayo de Filosofía</label>
+                    <span class="tag">Filosofía</span>
+                    <span class="fecha">Entrega: 20/09/2026</span>
+                </li>
+            </ul>
+            <div class="add-task">
+                <input type="text" id="nueva-actividad" placeholder="Nueva actividad">
+                <input type="text" id="tag-actividad" placeholder="Categoría">
+                <input type="date" id="fecha-actividad">
+                <button onclick="agregarActividad()">Agregar Actividad</button>
             </div>
-        </section>
-        
+
+            <h2>Agenda - Exámenes</h2>
+            <ul class="task-list" id="lista-examenes">
+                <li class="task-item">
+                    <input type="checkbox" id="examen-1">
+                    <label for="examen-1">Parcial de Matemáticas II</label>
+                    <span class="tag">Matemáticas II</span>
+                    <span class="fecha">Fecha: 25/09/2026</span>
+                </li>
+            </ul>
+            <div class="add-task">
+                <input type="text" id="nuevo-examen" placeholder="Nuevo examen">
+                <input type="text" id="tag-examen" placeholder="Materia">
+                <input type="date" id="fecha-examen">
+                <button onclick="agregarExamen()">Agregar Examen</button>
+            </div>
+        </div>
     </main>
 
-    <footer>
+       <script>
+        let contadorActividades = 2;
+        let contadorExamenes = 2;
 
-    </footer>
+        function agregarActividad() {
+            const lista = document.getElementById("lista-actividades");
+            const texto = document.getElementById("nueva-actividad").value;
+            const tag = document.getElementById("tag-actividad").value;
+            const fecha = document.getElementById("fecha-actividad").value;
+
+            if (texto.trim() === "" || fecha.trim() === "") return;
+
+            const li = document.createElement("li");
+            li.className = "task-item";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = "actividad-" + contadorActividades;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", "actividad-" + contadorActividades);
+            label.textContent = texto;
+
+            const spanTag = document.createElement("span");
+            spanTag.className = "tag";
+            spanTag.textContent = tag || "General";
+
+            const spanFecha = document.createElement("span");
+            spanFecha.className = "fecha";
+            spanFecha.textContent = "Entrega: " + fecha;
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            li.appendChild(spanTag);
+            li.appendChild(spanFecha);
+
+            lista.appendChild(li);
+
+            contadorActividades++;
+            document.getElementById("nueva-actividad").value = "";
+            document.getElementById("tag-actividad").value = "";
+            document.getElementById("fecha-actividad").value = "";
+        }
+
+        function agregarExamen() {
+            const lista = document.getElementById("lista-examenes");
+            const texto = document.getElementById("nuevo-examen").value;
+            const tag = document.getElementById("tag-examen").value;
+            const fecha = document.getElementById("fecha-examen").value;
+
+            if (texto.trim() === "" || fecha.trim() === "") return;
+
+            const li = document.createElement("li");
+            li.className = "task-item";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = "examen-" + contadorExamenes;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", "examen-" + contadorExamenes);
+            label.textContent = texto;
+
+            const spanTag = document.createElement("span");
+            spanTag.className = "tag";
+            spanTag.textContent = tag || "General";
+
+            const spanFecha = document.createElement("span");
+            spanFecha.className = "fecha";
+            spanFecha.textContent = "Fecha: " + fecha;
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            li.appendChild(spanTag);
+            li.appendChild(spanFecha);
+
+            lista.appendChild(li);
+
+            contadorExamenes++;
+            document.getElementById("nuevo-examen").value = "";
+            document.getElementById("tag-examen").value = "";
+            document.getElementById("fecha-examen").value = "";
+        }
+    </script>
 </body>
 </html>
