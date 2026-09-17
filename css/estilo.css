@@ -32,6 +32,8 @@ body {
   margin: 0 auto;
 }
 
+/**navegacion y header**/
+
 .header-sitio {
   background-color: var(--color-tarjeta);
   border-bottom: 1px solid var(--borde-color);
@@ -87,6 +89,27 @@ body {
   background-color: var(--color-fondo);
   font-weight: 600;
 }
+
+@media (max-width: 640px) {
+  .contenedor-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+ 
+  .navegacion ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+ 
+  .navegacion a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/**hero section**/
 
 .hero {
   padding: 4rem 0 3rem 0;
