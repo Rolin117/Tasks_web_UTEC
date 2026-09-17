@@ -52,18 +52,30 @@ body {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navegacion {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .navegacion a {
   text-decoration: none;
-  color: var(--color-texto-secundario);
+  color: var(--color-texto);
   font-weight: 500;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.navegacion a:hover,
-.navegacion a.active {
+.navegacion a:hover {
   color: var(--color-primario);
+  background-color: #f1f5f9;
 }
 
 .hero {
@@ -131,4 +143,68 @@ body {
 .lista-funciones p {
   color: var(--color-texto-secundario);
   font-size: 0.95rem;
+}
+
+.seccion-contacto {
+  padding: 3rem 0 4rem 0;
+}
+
+.seccion-contacto h1 {
+  font-size: 2rem;
+  color: var(--color-texto);
+  margin-bottom: 0.8rem;
+}
+
+.descripcion-contacto {
+  color: var(--color-texto-secundario);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tabla-directorio {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.tabla-directorio th {
+  background-color: #f8fafc;
+  color: var(--color-texto);
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--borde-color);
+}
+
+.tabla-directorio td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--borde-color);
+  color: var(--color-texto);
+}
+
+.tabla-directorio tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-directorio tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.tabla-directorio a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tabla-directorio a:hover {
+  text-decoration: underline;
 }
