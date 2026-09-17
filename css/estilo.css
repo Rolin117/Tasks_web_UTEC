@@ -1,6 +1,9 @@
 :root {
   --color-primario: #3b82f6;
   --color-primario-hover: #1d4ed8;
+  --color-secundario: #10B981;
+  --color-secundario-hover: #099a6a;
+  --color-terciario: #1F2937;
   --color-fondo: #f8fafc;
   --color-tarjeta: #ffffff;
   --color-texto: #0f172a;
@@ -52,8 +55,6 @@ body {
   display: flex;
   list-style: none;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
   align-items: center;
 }
 
@@ -73,9 +74,18 @@ body {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.navegacion a:hover {
+.navegacion a:hover,
+.navegacion a:focus-visible {
   color: var(--color-primario);
-  background-color: #f1f5f9;
+  background-color: var(--color-fondo);
+}
+
+.navegacion a.activo,
+.navegacion a.activo:hover,
+.navegacion a.activo:focus-visible {
+  color: var(--color-primario);
+  background-color: var(--color-fondo);
+  font-weight: 600;
 }
 
 .hero {
@@ -97,7 +107,7 @@ body {
 
 .btn-primario {
   display: inline-block;
-  background-color: var(--color-primario);
+  background-color: var(--color-secundario);
   color: #ffffff;
   padding: 0.75rem 1.4rem;
   border-radius: 6px;
@@ -107,7 +117,7 @@ body {
 }
 
 .btn-primario:hover {
-  background-color: var(--color-primario-hover);
+  background-color: var(--color-secundario-hover);
 }
 
 .funciones {
@@ -342,7 +352,7 @@ header nav a:hover, .nav-links a:hover {
 /*footer*/
 
 .footer-sitio {
-  background-color: var(--color-primario);
+  background-color: var(--color-terciario);
   color: var(--color-blanco);
   padding: 28px 0;
   margin-top: 48px;
