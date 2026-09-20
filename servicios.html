@@ -23,44 +23,32 @@
     </header>
 
     <main>
-      <div class="contenedor">
-        <h2>Agenda - Actividades</h2>
-        <ul class="task-list" id="lista-actividades">
-          <li class="task-item">
-            <input type="checkbox" id="actividad-1" />
-            <label for="actividad-1">Entregar ensayo de Filosofía</label>
-            <span class="tag">Filosofía</span>
-            <span class="fecha">Entrega: 20/09/2026</span>
-          </li>
-        </ul>
-        <div class="add-task">
-          <input
-            type="text"
-            id="nueva-actividad"
-            placeholder="Nueva actividad"
-          />
-          <input type="text" id="tag-actividad" placeholder="Categoría" />
-          <input type="date" id="fecha-actividad" />
-          <button onclick="agregarActividad()">Agregar Actividad</button>
-        </div>
+  <div class="contenedor">
+    <h2>Agenda - Actividades</h2>
+    <ul class="task-list" id="lista-actividades"></ul>
 
-        <h2>Agenda - Exámenes</h2>
-        <ul class="task-list" id="lista-examenes">
-          <li class="task-item">
-            <input type="checkbox" id="examen-1" />
-            <label for="examen-1">Parcial de Matemáticas II</label>
-            <span class="tag">Matemáticas II</span>
-            <span class="fecha">Fecha: 25/09/2026</span>
-          </li>
-        </ul>
-        <div class="add-task">
-          <input type="text" id="nuevo-examen" placeholder="Nuevo examen" />
-          <input type="text" id="tag-examen" placeholder="Materia" />
-          <input type="date" id="fecha-examen" />
-          <button onclick="agregarExamen()">Agregar Examen</button>
-        </div>
-      </div>
-    </main>
+    <div class="add-task">
+      <input
+        type="text"
+        id="nueva-actividad"
+        placeholder="Nueva actividad"
+      />
+      <input type="text" id="tag-actividad" placeholder="Categoría" />
+      <input type="date" id="fecha-actividad" />
+      <button onclick="agregarActividad()">Agregar Actividad</button>
+    </div>
+
+    <h2>Agenda - Exámenes</h2>
+    <ul class="task-list" id="lista-examenes"></ul>
+
+    <div class="add-task">
+      <input type="text" id="nuevo-examen" placeholder="Nuevo examen" />
+      <input type="text" id="tag-examen" placeholder="Materia" />
+      <input type="date" id="fecha-examen" />
+      <button onclick="agregarExamen()">Agregar Examen</button>
+    </div>
+  </div>
+</main>
 
     <footer class="footer-sitio">
       <div class="contenedor contenedor-footer">
