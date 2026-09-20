@@ -1,0 +1,67 @@
+.seccion-contacto {
+  padding: 3rem 0 4rem 0;
+}
+
+.seccion-contacto h1 {
+  font-size: 2rem;
+  color: var(--color-texto);
+  margin-bottom: 0.8rem;
+}
+
+.descripcion-contacto {
+  color: var(--color-texto-secundario);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tabla-directorio {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.tabla-directorio th {
+  background-color: #f8fafc;
+  color: var(--color-texto);
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--borde-color);
+}
+
+.tabla-directorio td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--borde-color);
+  color: var(--color-texto);
+}
+
+.tabla-directorio tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-directorio tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.tabla-directorio a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tabla-directorio a:hover {
+  text-decoration: underline;
+}
+
+.seccion-nosotros {
+  padding: 3rem 0 4rem 0;
+}

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios</title>
+    <title>Servicios - TaskManager</title>
     <link rel="stylesheet" href="css/estilo.css" />
     <link rel="stylesheet" href="css/servicios.css" />
   </head>
@@ -13,7 +13,7 @@
         <a href="index.html" class="logo">TaskManager</a>
         <nav class="navegacion">
           <ul>
-            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html" class="activo">Servicios</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
@@ -22,33 +22,82 @@
       </div>
     </header>
 
-    <main>
-  <div class="contenedor">
-    <h2>Agenda - Actividades</h2>
-    <ul class="task-list" id="lista-actividades"></ul>
+    <main class="dashboard-contenedor">
+      <div class="contenedor">
+        
+        <header class="dashboard-header">
+          <div class="header-titles">
+            <h1>Buenas tardes</h1>
+            <p>Resumen de tus tareas y actividades académicas</p>
+          </div>
+          <div class="header-search">
+            <input type="text" placeholder="Buscar tarea..." />
+          </div>
+        </header>
 
-    <div class="add-task">
-      <input
-        type="text"
-        id="nueva-actividad"
-        placeholder="Nueva actividad"
-      />
-      <input type="text" id="tag-actividad" placeholder="Categoría" />
-      <input type="date" id="fecha-actividad" />
-      <button onclick="agregarActividad()">Agregar Actividad</button>
-    </div>
+        <section class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-num" id="total-tareas">0</span>
+            <span class="metric-label">Tareas totales</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num text-green" id="tareas-completadas">0</span>
+            <span class="metric-label">Completadas</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num text-blue" id="tareas-pendientes">0</span>
+            <span class="metric-label">Por completar</span>
+          </div>
+        </section>
 
-    <h2>Agenda - Exámenes</h2>
-    <ul class="task-list" id="lista-examenes"></ul>
+        <div class="content-split">
+          
+        <div class="columna-gestion">
+          <section class="card-panel">
+            <h3>Agenda Académica</h3>
+            
+            <ul class="task-list" id="lista-tareas"></ul>
 
-    <div class="add-task">
-      <input type="text" id="nuevo-examen" placeholder="Nuevo examen" />
-      <input type="text" id="tag-examen" placeholder="Materia" />
-      <input type="date" id="fecha-examen" />
-      <button onclick="agregarExamen()">Agregar Examen</button>
-    </div>
-  </div>
-</main>
+            <div class="add-task">
+              <select id="tipo-tarea">
+                <option value="Tarea">Tarea</option>
+                <option value="Actividad">Actividad</option>
+                <option value="Proyecto">Proyecto</option>
+                <option value="Laboratorio">Laboratorio</option>
+                <option value="Examen">Examen</option>
+              </select>
+                <input type="text" id="nueva-tarea" placeholder="Título de la entrega..." />
+                <input type="text" id="materia-tarea" placeholder="Materia" />
+                <input type="date" id="fecha-tarea" />
+                <button onclick="agregarTarea()">Agregar</button>
+                </div>
+              </section>
+          </div>
+
+          <aside class="side-widgets">
+            <section class="card-panel progress-panel">
+              <h3>Progreso semanal</h3>
+              <div class="bar-chart">
+              <div class="bar-group"><div class="bar" data-dia="1"></div><span>L</span></div>
+              <div class="bar-group"><div class="bar" data-dia="2"></div><span>M</span></div>
+              <div class="bar-group"><div class="bar" data-dia="3"></div><span>M</span></div>
+              <div class="bar-group"><div class="bar" data-dia="4"></div><span>J</span></div>
+              <div class="bar-group"><div class="bar" data-dia="5"></div><span>V</span></div>
+              <div class="bar-group"><div class="bar" data-dia="5"></div><span>V</span></div>
+              <div class="bar-group"><div class="bar" data-dia="6"></div><span>S</span></div>
+              <div class="bar-group"><div class="bar" data-dia="7"></div><span>D</span></div>
+              </div>
+            </section>
+
+            <section class="card-panel subjects-panel">
+              <h3>Materias</h3>
+              <ul class="subject-list" id="lista-materias-conteo">
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
 
     <footer class="footer-sitio">
       <div class="contenedor contenedor-footer">
