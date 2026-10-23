@@ -409,13 +409,16 @@ header nav a:hover, .nav-links a:hover {
 
 /*footer*/
 
+
+/* Footer global */
+
 .footer-sitio {
   background-color: var(--color-terciario);
-  color: var(--color-blanco);
+  color: #ffffff;
   padding: 28px 0;
   margin-top: 48px;
 }
- 
+
 .contenedor-footer {
   display: flex;
   flex-direction: column;
@@ -423,37 +426,52 @@ header nav a:hover, .nav-links a:hover {
   gap: 14px;
   text-align: center;
 }
- 
+
 .footer-sitio p {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
 }
- 
+
 .links-footer {
   display: flex;
   gap: 24px;
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
- 
+
 .links-footer a {
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.15s ease;
 }
- 
+
 .links-footer a:hover,
 .links-footer a:focus-visible {
-  color: var(--color-acento);
+  color: #93c5fd;
   text-decoration: underline;
 }
- 
+
 @media (min-width: 640px) {
   .contenedor-footer {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     text-align: left;
   }
+}
+/* Fecha y hora dentro del footer */
+.fecha-hora-footer {
+  width: 100%;
+  flex-basis: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 12px;
 }
