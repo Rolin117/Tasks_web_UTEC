@@ -1,0 +1,103 @@
+/**hero section**/
+
+.hero {
+  padding: 4rem 0 3rem;
+  background-color: var(--color-fondo);
+  background-image: url("../img/fondo-estudio.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+ 
+.contenedor-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+ 
+.hero-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 620px;
+}
+ 
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: var(--color-texto);
+}
+ 
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 1.5rem;
+}
+ 
+.btn-primario {
+  display: inline-block;
+  background-color: var(--color-secundario);
+  color: var(--color-tarjeta);
+  padding: 0.75rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+ 
+.btn-primario:hover,
+.btn-primario:focus-visible {
+  background-color: var(--color-secundario-hover);
+}
+ 
+.panel-img img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+   border: 1px solid var(--borde-color);
+  box-shadow: 0 12px 28px -12px rgba(15, 23, 42, 0.18);
+}
+ 
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+}
+
+.funciones {
+  padding: 2rem 0 4rem 0;
+}
+
+.funciones h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.lista-funciones {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.lista-funciones li {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.lista-funciones h3 {
+  font-size: 1.15rem;
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.lista-funciones p {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+}

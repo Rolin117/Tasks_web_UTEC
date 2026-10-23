@@ -1,0 +1,156 @@
+/*Objetivos*/
+.objetivos-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    grid-column: 1 / -1; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.objetivos-card h3 {
+    color: #1a56db;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.objetivos-card p {
+    color: #4b5563;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.objetivos-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px 28px;
+}
+
+.objetivos-card li {
+    position: relative;
+    padding-left: 28px;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.objetivos-card li::before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    top: -2px;
+    color: #1a56db;
+    font-size: 1.4rem;
+}
+
+.objetivos-card li strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+/*mision y vision*/
+.identidad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.tarjeta-identidad {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tarjeta-identidad h2 {
+  font-size: 1.3rem;
+  color: var(--color-primario);
+  margin-bottom: 0.75rem;
+}
+
+.tarjeta-identidad p {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/*equipo*/
+.seccion-equipo {
+  margin-top: 2rem;
+}
+
+.encabezado-seccion {
+  margin-bottom: 2rem;
+}
+
+.encabezado-seccion h2 {
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  margin-bottom: 0.5rem;
+}
+
+.encabezado-seccion p {
+  color: var(--color-texto-secundario);
+  font-size: 1rem;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-miembro {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--borde-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-miembro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-miembro h3 {
+  font-size: 1.05rem;
+  color: var(--color-texto);
+  margin-bottom: 0.35rem;
+}
+
+.tarjeta-miembro .rol {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-bottom: 0.8rem;
+  background-color: #e0f2fe;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tarjeta-miembro p {
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+  line-height: 1.5;
+}
