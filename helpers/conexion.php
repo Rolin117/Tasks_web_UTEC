@@ -5,19 +5,18 @@ header('Access-Control-Allow-Origin: *');
 date_default_timezone_set('America/El_Salvador');
 // Constantes para establecer las credenciales de conexión con el servidor de bases de datos.
 define('SERVER', 'localhost');
-define('DATABASE', 'taskManager');
-// define('USERNAME', 'root'); 
-// define('PASSWORD', '');
-define('USERNAME', 'ci_user'); 
-define('PASSWORD', 'root');
+define('DATABASE', 'db_taskmanager');
+define('USERNAME', 'root');
+define('PASSWORD', '');
 
- // Intentar establecer conexión con la base de datos
-//    $conn = new mysqli(SERVER, USERNAME, PASSWORD, DATABASE);
 
-//    if ($conn->connect_error) {
-//       die("Conexión fallida: " . $conn->connect_error);
-//    } else {
-//       echo "¡Conexión exitosa!";
-//    }
+// Intentar establecer conexión con la base de datos
+$conn = new mysqli(SERVER, USERNAME, PASSWORD, DATABASE);
 
-//   $conn->close();
+if ($conn->connect_error) {
+   die("Conexión fallida: " . $conn->connect_error);
+} else {
+   echo "¡Conexión exitosa!";
+}
+
+$conn->close();
