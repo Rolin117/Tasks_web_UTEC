@@ -1,0 +1,139 @@
+/* css/estilos.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f3f4f9;
+    color: #333;
+}
+
+/* Menú lateral (Sidebar) */
+.sidebar {
+    width: 250px;
+    background-color: #151a26;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar h2 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #a0a5b1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-item:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #a0a5b1;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.nav-item.active {
+    background-color: #3b82f6;
+    color: white;
+}
+.nav-item.active:before {
+    background-color: white;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+.header {
+    margin-bottom: 30px;
+}
+.header h1 {
+    color: #3b82f6;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+.header p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Tarjeta de Formulario */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    max-width: 600px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4b5563;
+}
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-control:focus {
+    border-color: #3b82f6;
+}
+
+/* Botón de envío */
+.btn-submit {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+.btn-submit:hover {
+    background-color: #2563eb;
+}
+
+/* Alertas */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.alert.success {
+    background-color: #def7ec;
+    color: #03543f;
+    border: 1px solid #84e1bc;
+}
+.alert.error {
+    background-color: #fde8e8;
+    color: #9b1c1c;
+    border: 1px solid #f8b4b4;
+}

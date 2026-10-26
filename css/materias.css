@@ -1,0 +1,66 @@
+/* Estilos para la vista de Materias */
+.form-inline {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.form-inline .form-group {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+.form-inline .btn-submit {
+    width: auto;
+    padding: 12px 30px;
+}
+
+/* Estilos de Tabla */
+.table-container {
+    margin-top: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+.table th {
+    font-weight: 600;
+    color: #4b5563;
+    background-color: #f9fafb;
+}
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botones de acción en la tabla */
+.btn-action {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.2s;
+}
+.btn-edit {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+.btn-edit:hover {
+    background-color: #e5e7eb;
+}
+.btn-delete {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+.btn-delete:hover {
+    background-color: #fecaca;
+}
