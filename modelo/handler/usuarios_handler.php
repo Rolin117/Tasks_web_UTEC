@@ -1,55 +1,54 @@
 <?php
 
-require_once('../../helpers/conexion.php');
+require_once('../../helpers/database.php');
 
-class UsuariosHandler 
+class UsuariosHandler
 {
+    protected $id = null;
+    protected $nombre = null;
+    protected $apellido = null;
+    protected $correo = null;
+    protected $password = null;
 
-protected $id = null;
-protected $nombre = null;
-protected $correo = null;
-protected $password = null;
-protected $fecha = null;
-
-
-
+    // Verificar la contraseña del usuario en sesión.
     public function checkPassword($password)
     {
-         $sql = 'SELECT password
-                 FROM usuarios
-                 WHERE id_usuario = ?';
-         $params = array($_SESSION['id_usuario']);
-         $data = Database::getRow($sql, $params);
-         if (password_verify($password, $data['password'])) {
-             return true;
-         } else {
-             return false;
-         }
+        $sql = 'SELECT password
+                FROM usuarios
+                WHERE id_usuario = ?';
+        $params = array($_SESSION['usuario_id']);
+        $data = Database::getRow($sql, $params);
+        if ($data && password_verify($password, $data['password'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    // Metodos SCRUD
-       public function searchRows()
+    // Métodos SCRUD
+    public function searchRows()
     {
         $value = '%' . Validaciones::getSearchValue() . '%';
-        $sql = 'SELECT id_usuario, nombre, correo, fecha_registro
+        $sql = 'SELECT id_usuario, nombre, apellido, correo, fecha_registro
                 FROM usuarios
-                WHERE nombre LIKE ?
+                WHERE nombre LIKE ? OR apellido LIKE ? OR correo LIKE ?
                 ORDER BY correo';
-        $params = array($value);
+        $params = array($value, $value, $value);
         return Database::getRows($sql, $params);
     }
 
+    // fecha_registro se llena sola con DEFAULT CURRENT_TIMESTAMP.
     public function createRow()
     {
-        $sql = 'INSERT INTO usuarios(nombre, correo, password, fecha_registro)
+        $sql = 'INSERT INTO usuarios(nombre, apellido, correo, password)
                 VALUES(?, ?, ?, ?)';
-        $params = array($this->nombre, $this->correo, $this->password, $this->fecha);
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->password);
         return Database::executeRow($sql, $params);
     }
 
     public function readAll()
     {
-        $sql = 'SELECT id_usuario, nombre, correo, fecha_registro
+        $sql = 'SELECT id_usuario, nombre, apellido, correo, fecha_registro
                 FROM usuarios
                 ORDER BY correo';
         return Database::getRows($sql);
@@ -57,7 +56,7 @@ protected $fecha = null;
 
     public function readOne()
     {
-        $sql = 'SELECT id_usuario, nombre, corre, fecha_registro
+        $sql = 'SELECT id_usuario, nombre, apellido, correo, fecha_registro
                 FROM usuarios
                 WHERE id_usuario = ?';
         $params = array($this->id);
@@ -67,9 +66,9 @@ protected $fecha = null;
     public function updateRow()
     {
         $sql = 'UPDATE usuarios
-                SET nombre = ?, correo = ?
+                SET nombre = ?, apellido = ?, correo = ?
                 WHERE id_usuario = ?';
-        $params = array($this->nombre, $this->correo, $this->id);
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->id);
         return Database::executeRow($sql, $params);
     }
 

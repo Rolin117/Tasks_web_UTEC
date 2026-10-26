@@ -6,7 +6,8 @@ USE db_taskmanager;
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    correo VARCHAR(150) NOT NULL UNIQUE,
+    apellido VARCHAR(100),
+    correo VARCHAR(150) NOT NULL,
     password VARCHAR(255) NOT NULL,
     fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -15,7 +16,7 @@ CREATE TABLE usuarios (
 CREATE TABLE materias (
     id_materia INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
-    nombre VARCHAR(100) NOT NULL,
+    nombre VARCHAR(100) UNIQUE NOT NULL,
     color_hex VARCHAR(7) DEFAULT '#CCCCCC',
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
@@ -24,7 +25,7 @@ CREATE TABLE materias (
 CREATE TABLE categorias (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50) UNIQUE NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 

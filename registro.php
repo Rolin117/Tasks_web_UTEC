@@ -11,7 +11,10 @@ require_once 'helpers/conexion.php';
 $error = '';
 $exito = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Fuera de un servidor web (por ejemplo en modo CLI) esta clave no existe.
+$metodo = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+
+if ($metodo === 'POST') {
     $nombre   = trim($_POST['nombre'] ?? '');
     $apellido = trim($_POST['apellido'] ?? '');
     $correo   = trim($_POST['correo'] ?? '');
@@ -30,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmtCheck->fetch()) {
                 $error = "Este correo ya está registrado. Intenta iniciar sesión.";
             } else {
-                $nombreCompleto = $nombre . ' ' . $apellido;
-
                 $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-                $sqlInsert = "INSERT INTO usuarios (nombre, correo, password) VALUES (:nombre, :correo, :password)";
+                $sqlInsert = "INSERT INTO usuarios (nombre, apellido, correo, password)
+                              VALUES (:nombre, :apellido, :correo, :password)";
                 $stmtInsert = $conexion->prepare($sqlInsert);
                 $stmtInsert->execute([
-                    ':nombre'   => $nombreCompleto,
+                    ':nombre'   => $nombre,
+                    ':apellido' => $apellido,
                     ':correo'   => $correo,
                     ':password' => $passwordHash
                 ]);
@@ -45,7 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $exito = "¡Cuenta creada exitosamente! Ya puedes iniciar sesión.";
             }
         } catch (PDOException $e) {
-            $error = "Ocurrió un error al registrar el usuario.";
+            // 1062 = correo duplicado (por si dos registros llegan al mismo tiempo)
+            if (($e->errorInfo[1] ?? 0) == 1062) {
+                $error = "Este correo ya está registrado. Intenta iniciar sesión.";
+            } else {
+                $error = "Ocurrió un error al registrar el usuario.";
+            }
         }
     }
 }
